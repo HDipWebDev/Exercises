@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Getting Browser Information</title>
+
+    <!-- Bootstrap -->
+    <link href="../bs/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Getting Browser Information</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#e1">Empty</a></li>
+            <li><a href="#e2">Empty</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container" role="main">
+
+      <div class='col-sm-12 col-md-6'>
+        <article>
+        <h2>Getting Browser Information</h2>
+          <p>There are a mariad of devics that utalise web technologies.  Currently much web usage is undertaken on mobile devices.  Responsive Design will help us to deal with these issues to a point.  However sometimes it is necessary to change, drop or add functionality for certain devices.  The first step in achieving this is determining what browser the user is viewing the page on.</p>
+          <p>We can determine this using the <code>navigator</code> object.</p> 
+        </article>
+      </div>
+
+      <div class='col-sm-12 col-md-6'>
+        <article>
+          <h2>Navigator Object</h2>
+          <p>The navigator object has the following attributes</p>
+          <table>
+            <tr>
+              <td><code>appName</code></td><td>Users Browser</td>
+            </tr> 
+            <tr>
+              <td><code>appCodeName</code></td><td>Code Name for Browser</td>
+            </tr>
+            <tr>
+              <td><code>appVersion</code></td><td>Browser Version</td>
+            </tr>
+            <tr>
+              <td><code>plugins</code></td><td>Installed plugins</td>
+            </tr>
+            <tr>
+              <td><code>platform</code></td><td>Operating System</td>
+            </tr>
+          </table>
+        </article>
+      </div>
+
+
+      <div class="clearfix"></div>
+
+      <div class='col-sm-12 col-md-6' id='binfo'></div>
+
+      <div class='col-sm-12 col-md-6' id='bplugins'></div>
+
+      <div class='col-sm-12 col-md-12'>
+      <h2>JavaScript Code</h2>
+      <pre>
+function formatInfo () {
+    var bName = navigator.appName;
+    var bCodeName = navigator.appCodeName;
+    var bVersion = navigator.appVersion;
+    var bPlatform = navigator.platform;
+
+    var output = "&lt;h3&gt;Browser Information&lt;/h3&gt;";
+
+    output += "&lt;p>Your Browser is " + bName + "&lt;br>";
+    output += "Your Browser Code Name is " + bCodeName + "&lt;br&gt;";
+    output += "Your Browser Version is " + bVersion + "&lt;br&gt;";
+    output += "Your Operating System is " + bPlatform + "&lt;/p&gt;";
+  
+    console.log(output);
+
+    return output;
+}
+
+
+function formatPlugIns () {
+  var bPlugins = navigator.plugins;
+
+  var output = "&lt;h3&gt;Browser Plug-Ins are:&lt;/h3&gt;";
+    
+    if(bPlugins.length > 0){
+    for (var i = 0; i < bPlugins.length; i++){
+      output += (i+1) +".  " + bPlugins[i].name + "&lt;br&gt;";
+    }
+
+  output += "&lt;/p&gt;";
+  } else {
+
+    output += "&lt;p&gt;No plugins detected&lt;/p&gt;"
+  }
+  
+  console.log(output);
+
+  return output;
+}
+
+document.getElementById("binfo").innerHTML = formatInfo();
+document.getElementById("bplugins").innerHTML = formatPlugIns();
+      </pre>
+    </div>
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bs/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/BrowserInfo.js"></script>
+  </body>
+</html

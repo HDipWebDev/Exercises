@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Event Listeners and Handlers</title>
+
+    <!-- Bootstrap -->
+    <link href="../bs/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Event Listeners and Handlers</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li ><a href="ex1a.html">Home</a></li>
+            <li><a href="ex1b.html">Better Event Handler</a></li>
+            <li><a class="active" href="#">W3C Event Handler</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container" role="main">
+
+	    <div class='col-md-12'>
+		<article>
+			<h2>Background</h2>
+			<p>Although keeping the event listeners inside the JavaScript was an improvement over previous practices there are still limitations, for instance you can only have one Event Handler per listener.</p>
+			<p>As part of the DOM Level 2 specification, the W3C developed their own mechanism for dealing with events. It involves adding an event listener to the DOM element using <code>addEventListener(type, function, phase)</code>. In addition to this, event listeners can be removed using <code>removeEventListener(type, function, phase)</code>.</p>
+			<p>The div below has been given an id called W3C. Multiple event listeners have been applied to the div for the <code>onclick</code> event. Refer to the JavaScript to see the code</p>
+		</article>
+	    </div>
+
+
+		<div class='col-md-offset-2 col-md-6'>
+
+		</div>
+		<div class='clearfix'></div>
+		<div class='col-md-6' id='Form Submission'>
+
+		</div>
+		<div class='col-md-6' id='cookieRead'>
+			<h2>Cookie Read</h2>
+
+			<button type='button' class='btn btn-primary' id='pullCookie'>Pull Cookie Data</button>
+		</div>
+		<div class='clearfix'></div>
+
+
+    
+
+	    <div class='col-sm-12 col-md-12'>
+	      <h2>JavaScript Code</h2>
+	      <pre><code class='js'>
+function SayHello(){
+
+	var someText = "<p>This is some HTML that is inserted at runtime by a JavaScript function.	Note that the original text has been completely replaced by what you are reading now.  If you want to add text to the existing, you need to do some more work.  Another point of interest is viewing the page source.  If you view the page source you will see that the source is unchanged; however if you use the developer tools and inspect this element, you will find that the contents of the entire div has been replaced, including the original article tags</p>"
+
+	document.getElementById("FindMe").innerHTML = someText;
+
+}
+
+
+function cngColor () {
+	console.log("Changing Color");
+
+	document.getElementById("W3C").style.color = 'yellow';
+
+}
+
+
+function cngSize () {
+	console.log("Changing Font Size");
+
+	document.getElementById("W3C").style.fontSize = '2em';
+
+}
+
+
+// This is an exaple of an anonymous function being used to respond to an external event
+
+document.getElementById("secondFind").onclick = function(){
+
+		var someText = "<p>This is an event handler that has been driven entirely by the JavaScript code.  There are no inline event listeners in the HTML</p>"
+
+		document.getElementById("secondFind").innerHTML = someText;
+
+};
+
+
+document.getElementById("W3C").addEventListener('click', cngColor, false);
+document.getElementById("W3C").addEventListener("click", cngSize, false);
+	      </code></pre>
+	    </div>
+
+
+
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bs/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../bs/highlight/styles/default.css">    
+    <script src="../bs/highlight/highlight.pack.js"></script>
+    <script type="text/javascript" src="js/jsex1.js.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html
