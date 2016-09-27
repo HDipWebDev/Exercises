@@ -1,0 +1,390 @@
+/*
+ ____                _   
+|  _ \ ___  ___  ___| |_ 
+| |_) / _ \/ __|/ _ \ __|
+|  _ <  __/\__ \  __/ |_ 
+|_| \_\___||___/\___|\__|
+                         
+*/		
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+
+/*
+ _____                                        _           
+|_   _|   _ _ __   ___   __ _ _ __ __ _ _ __ | |__  _   _ 
+  | || | | | '_ \ / _ \ / _` | '__/ _` | '_ \| '_ \| | | |
+  | || |_| | |_) | (_) | (_| | | | (_| | |_) | | | | |_| |
+  |_| \__, | .__/ \___/ \__, |_|  \__,_| .__/|_| |_|\__, |
+      |___/|_|          |___/          |_|          |___/ 
+*/
+
+@font-face
+{
+font-family: teleindicator;
+src: url(fnt/teleindicadores1.ttf);
+}
+
+@font-face
+{
+font-family: rawengulksans;
+src: url(fnt/rawengulksans-094.otf);
+}
+
+@font-face
+{
+font-family: ralewaythin;
+src: url(fnt/raleway_thin-webfont.woff);
+}
+
+
+body {
+	background-color: gray;
+	color: #FFFFFF;
+}
+
+h1 {
+	text-align: center;
+}
+
+#sserif{
+font-family: sans-serif;
+}
+
+#serif{
+font-family: serif;
+}
+
+#cursive{
+font-family: cursive;
+}
+
+#monospace{
+font-family: monospace;
+}
+
+#georgia{
+font-family: Georgia;
+}
+
+
+#tahoma{
+font-family: Tahoma;
+}
+
+#timesnr{
+font-family: Times New Roman;
+}
+
+#verdana{
+font-family: Verdana;
+}
+
+#arial{
+font-family: Arial;
+}
+
+#tangerine{
+font-family: Tangerine, san-serif;
+}
+
+#hennypenny{
+font-family: 'Henny Penny', cursive;
+}
+
+#annietele{
+font-family: 'Annie Use Your Telescope', cursive;
+}
+
+#teleindicator{
+font-family: teleindicator;
+}
+
+#rawengulksans{
+font-family: rawengulksans;
+}
+
+
+#ralewaythin{
+font-family: ralewaythin;
+}
+
+
+/*
+Arial, Arial, Helvetica, sans-serif	
+Arial Black, Arial Black, Gadget, sans-serif	
+Comic Sans MS, Comic Sans MS5, cursive	
+Courier New, Courier New, monospace	
+Georgia1, Georgia, serif	
+Impact, Impact5, Charcoal6, sans-serif	
+Lucida Console, Monaco5, monospace	
+Lucida Sans Unicode, Lucida Grande, sans-serif	
+Palatino Linotype, Book Antiqua3, Palatino, serif	
+Tahoma, Geneva, sans-serif	
+Times New Roman, Times New Roman, Times, serif	
+Trebuchet MS1, Trebuchet MS, sans-serif	
+Verdana, Verdana, Geneva, sans-serif	
+*/
+
+/*
+Arial, Arial, Helvetica, 
+Arial Black, Arial Black, Gadget, 	
+Comic Sans MS, Comic Sans MS5, 
+Courier New, Courier New, 	
+Lucida Console, Monaco5, 	
+Lucida Sans Unicode, Lucida Grande, 	
+Palatino Linotype, Book Antiqua3, Palatino, 
+, Geneva, 	
+Times New Roman, Times New Roman, Times, 
+Trebuchet MS1, Trebuchet MS, 
+Verdana, Verdana, Geneva, 	
+*/
+
+
+
+/*						 
+ ____            _        _                            _   
+| __ )  __ _ ___(_) ___  | |    __ _ _   _  ___  _   _| |_ 
+|  _ \ / _` / __| |/ __| | |   / _` | | | |/ _ \| | | | __|
+| |_) | (_| \__ \ | (__  | |__| (_| | |_| | (_) | |_| | |_ 
+|____/ \__,_|___/_|\___| |_____\__,_|\__, |\___/ \__,_|\__|
+                                     |___/                 
+*/	
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12{
+	display: inline;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #0C5DA5;
+}
+
+
+#container {
+	width: 960px;
+	background-color: #172CAF;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+.col-1 {
+	width: 40px;
+}
+.col-2 {
+	width: 120px;
+}
+.col-3 {
+	width: 200px;
+}
+.col-4 {
+	width: 280px;
+}
+.col-5 {
+	width: 360px;
+}
+.col-6 {
+	width: 440px;
+}
+.col-7 {
+	width: 520px;
+}
+.col-8 {
+	width: 600px;
+}
+.col-9 {
+	width: 680px;
+}
+.col-10 {
+	width: 760px;
+}
+.col-11{
+	width: 840px;
+}
+.col-12 {
+	width: 920px;
+}
+
+
+
+.clearfix {
+	clear: both;
+}
+
+
+
+.trim-left{
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.trim-right{
+	margin-right: 0px;
+	padding-right: 0px;
+}
+
+.blank-left-1{
+	padding-left: 90px
+}
+.blank-left-2{
+	padding-left: 170px
+}
+.blank-left-3{
+	padding-left: 250px
+}
+.blank-left-4{
+	padding-left: 330px
+}
+.blank-left-5{
+	padding-left: 410px
+}
+.blank-left-6{
+	padding-left: 490px
+}
+.blank-left-7{
+	padding-left: 570px
+}
+.blank-left-8{
+	padding-left: 650px
+}
+.blank-left-9{
+	padding-left: 730px
+}
+.blank-left-10{
+	padding-left: 810px
+}
+.blank-left-11{
+	padding-left: 890px
+}
+
+
+
+.blank-right-1{
+	padding-right: 90px
+}
+.blank-right-2{
+	padding-right: 170px
+}
+.blank-right-3{
+	padding-right: 250px
+}
+.blank-right-4{
+	padding-right: 330px
+}           
+.blank-right-5{       
+	padding-right: 410px
+}           
+.blank-right-6{       
+	padding-right: 490px
+}           
+.blank-right-7{       
+	padding-right: 570px
+}           
+.blank-right-8{       
+	padding-right: 650px
+}           
+.blank-right-9{       
+	padding-right: 730px
+}           
+.blank-right-10{      
+	padding-right: 810px
+}           
+.blank-right-11{      
+	padding-right: 890px
+}           
+
+
+.stack{
+	display: block;
+	clear: both;
+}
+
+
+
+
+
+
+
+/*						 
+ __  __          _ _          ___                  _           
+|  \/  | ___  __| (_) __ _   / _ \ _   _  ___ _ __(_) ___  ___ 
+| |\/| |/ _ \/ _` | |/ _` | | | | | | | |/ _ \ '__| |/ _ \/ __|
+| |  | |  __/ (_| | | (_| | | |_| | |_| |  __/ |  | |  __/\__ \
+|_|  |_|\___|\__,_|_|\__,_|  \__\_\\__,_|\___|_|  |_|\___||___/
+                                                               
+*/								 
+
+@media (max-width: 800px){
+		#container {
+			width: 760px;
+		}
+
+		
+}
+
+@media (max-width: 481px){
+		#container {
+			width: 440px;
+		}
+
+
+		.col-1, .col-2,
+		.col-3, .col-4,
+		.col-5, .col-6,
+		.col-7, .col-8,
+		.col-9, .col-10,
+		.col-11,.col-12{
+			display: block;
+			float: left;
+		}
+
+
+		.blank-left-1, .blank-right-1,
+		.blank-left-2, .blank-right-2,
+		.blank-left-3, .blank-right-3,
+		.blank-left-4, .blank-right-4,
+		.blank-left-5, .blank-right-5,
+		.blank-left-6, .blank-right-6,
+		.blank-left-7, .blank-right-7,
+		.blank-left-8, .blank-right-8,
+		.blank-left-9, .blank-right-9,
+		.blank-left-10, .blank-right-10,
+		.blank-left-11, .blank-right-11{
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		.col-6,
+		.col-7,
+		.col-8, 
+		.col-9,
+		.col-10,
+		.col-11,
+		.col-12{
+			width: 400px;
+		}
+
+		
+}
+
+
