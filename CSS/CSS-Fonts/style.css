@@ -334,7 +334,7 @@ Verdana, Verdana, Geneva,
                                                                
 */								 
 
-@media (max-width: 800px){
+@media screen and (max-width: 800px){
 		#container {
 			width: 760px;
 		}
@@ -342,7 +342,7 @@ Verdana, Verdana, Geneva,
 		
 }
 
-@media (max-width: 481px){
+@media screeen and (max-width: 481px){
 		#container {
 			width: 440px;
 		}
