@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Lecture Support</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>W3C Event Listeners and Handlers</h1>
+      <nav class="navbar navbar-default">
+        <ul class="nav nav-tabs">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Ex01P2.html">Better EH</a></li>
+          <li class="active"><a href="#">W3C EH</a></li>
+          <li><a href="Ex01P4.html">JQuery Version</a></li>     
+        </ul>
+      </nav>
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Background</h1>
+          <p>Although keeping the event listeners inside the JavaScript was an improvement over previous practices there are still limitations, for instance you can only have one Event Handler per listener.</p>
+          <p>As part of the DOM Level 2 specification, the W3C developed their own mechanism for dealing with events. It involves adding an event listener to the DOM element using addEventListiner(type, function, phase). In addition to this, event listeners can be removed using removeEventListener(type, function, phase).</p>
+          <p>The div below has been given an id called W3C. Multiple event listners have been applied to the div for the onclick event. Refer to the JavaScript to see the code</p>
+          <p></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="alert alert-info" id="W3C">This div reacts to two different event handlers when the onclick event listener is fired.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" id="secondFind">
+        </div>
+      </div>
+      <div class="row">
+        <div class='col-sm-12 col-md-12'>
+          <h2>JavaScript Code</h2>
+          <pre><code class='js'>
+function cngClass() {
+  console.log("Changing Class");
+  this.className = "";
+  this.className = "alert alert-danger";
+
+}
+
+
+function cngSize() {
+  console.log("Changing Font Size");
+
+  this.style.fontSize = '2em';
+
+}
+
+document.getElementById("W3C").addEventListener('click', cngClass, false);
+document.getElementById("W3C").addEventListener("click", cngSize, false);
+          </code></pre>
+        </div>
+      </div> 
+    </div>
+
+ 
+
+
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/JavaScript.js"></script>
+  </body>
+</html>

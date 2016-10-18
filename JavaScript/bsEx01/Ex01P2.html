@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Lecture Support</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Better Event Listener</h1>
+      <nav class="navbar navbar-default">
+        <ul class="nav nav-tabs">
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="#">Better EH</a></li>
+          <li><a href="Ex01P3.html">W3C EH</a></li>
+          <li><a href="Ex01P4.html">JQuery Version</a></li>     
+        </ul>
+      </nav>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Part of the problem with the previous event handler is that it involves placing bits of JavaScript into the site HTML. This creates unnecessary complexity in the code and makes maintenance extremly difficult.  A better implementation is to keep the event listeners in JavaScript by using:</p>
+          <pre><code class="js">
+document.getElementById("someID").onclick.  
+          </code></pre>
+          <p>When the event handler is added in, the final code looks like:</p>
+          <pre><code class="js">
+document.getElementById("someID").onclick = doSomething();  
+          </code></pre>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="alert alert-info" role="alert" id="secondFind">Click on this div to see what happens</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Also note the scope of the variable 'someText' in the JavaScript file.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" id="W3C">
+        </div>
+      </div>
+      <div class="row">
+        <div class='col-sm-12 col-md-12'>
+          <h2>JavaScript Code</h2>
+          <pre><code class='js'>
+// This is an example of an anonymous function being used to respond to an external event
+
+document.getElementById("secondFind").onclick = function(){
+
+    var someText = "This is an event handler that has been driven entirely by the JavaScript code.  There are no inline event listeners in the HTML"
+
+    document.getElementById("secondFind").innerHTML = someText;
+
+};
+          </code></pre>
+        </div>
+      </div> 
+
+
+
+
+
+
+
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/JavaScript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Lecture Support</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>JavaScript Lecture Support</h1>
+      <nav class="navbar navbar-default">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="Ex01P2.html">Better EH</a></li>
+          <li><a href="Ex01P3.html">W3C EH</a></li>
+          <li><a href="Ex01P4.html">JQuery Version</a></li>      
+        </ul>
+      </nav>
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Driven by JavaScript</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" id="FindMe" onclick='SayHello()'>
+          <h2>Click on this div to see what happens</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" id="secondFind">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" id="W3C">
+        </div>
+      </div>
+      <div class="row">
+        <div class='col-sm-12 col-md-12'>
+          <h2>JavaScript Code</h2>
+          <pre><code class='js'>
+function SayHello(){
+
+  var someText = "<p>This is some HTML that is inserted at runtime by a JavaScript function.  Note that the original text has been completely replaced by what you are reading now.  If you want to add text to the existing, you need to do some more work.  Another point of interest is viewing the page source.  If you view the page source you will see that the source is unchanged; however if you use the developer tools and inspect this element, you will find that the contents of the entire div has been replaced, including the original article tags</p>"
+
+  document.getElementById("FindMe").innerHTML = someText;
+
+}
+          </code></pre>
+        </div>
+      </div> 
+    
+
+
+
+
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/JavaScript.js"></script>
+  </body>
+</html>
