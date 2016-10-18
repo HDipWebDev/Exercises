@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Lecture Support</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Robust Event Listeners and Handlers</h1>
+      <nav class="navbar navbar-default">
+        <ul class="nav nav-tabs">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Ex02P2.html">Improved JS</a></li>
+          <li><a href="#">JQuery</a></li>
+          <li class="active"><a href="Ex02P4.html">Other Events</a></li>     
+        </ul>
+      </nav>
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Other Events</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" >
+          <button id="click" class="btn btn-primary btn-lg">Click</button>
+          <pre><code class='js' >
+$('#click').click(function(){
+  $(this).toggleClass("btn-danger");
+});
+          </code></pre>
+        </div>
+        <div class="col-md-4" >
+          <button id="dblclick" class="btn btn-primary btn-lg">Double Click</button>
+          <pre><code class='js' >
+$('#dblclick').dblclick(function() {
+  $(this).toggleClass("btn-danger");
+});
+          </code></pre>
+        </div>
+        <div class="col-md-4" >
+          <button id="mouseEnter" class="btn btn-primary btn-lg">Mouse Enter</button>
+          <pre><code class='js' >
+$('#mouseEnter').mouseenter(function() {
+  $(this).toggleClass("btn-danger");
+});
+          </code></pre>
+        </div>
+      </div>
+      <div class="row">   
+
+        <div class="col-md-4" >
+          <button id="mouseLeave" class="btn btn-primary btn-lg">Mouse Leave</button>
+          <pre><code class='js' >
+$('#mouseLeave').mouseleave(function() {
+  $(this).toggleClass("btn-danger");
+});
+          </code></pre>
+        </div>
+        <div class="col-md-4" >
+          <button id="mouseDown" class="btn btn-primary btn-lg">Mouse Down</button>
+          <pre><code class='js' >
+$('#mouseDown').mousedown(function() {
+  $(this).toggleClass("btn-danger");
+});
+          </code></pre>
+        </div>
+
+
+        <div class="col-md-4" >
+          <button id="mouseUp" class="btn btn-primary btn-lg">Mouse Up</button>
+          <pre><code class='js' >
+$('#mouseUp').mouseup(function() {
+  $(this).toggleClass("btn-danger");
+});
+          </code></pre>
+        </div>
+
+
+
+
+      </div>
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/JSP4.js"></script>
+  </body>
+</html>

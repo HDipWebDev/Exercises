@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Lecture Support</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Robust Event Listeners and Handlers</h1>
+      <nav class="navbar navbar-default">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="Ex02P2.html">Improved JS</a></li>
+          <li><a href="Ex02P3.html">JQuery</a></li>
+          <li><a href="Ex02P4.html">Other Events</a></li>      
+        </ul>
+      </nav>
+      <div class="row">
+        <div class="col-md-12">
+          <p>The previous samples were quite easy to break and did not allow for cross browser support.  In order to create more robust event control, we need to do some more work. The JavaScript that supports this page has been hardened to cater for missing DOM elements and cross browser support.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" id="W3C">
+          <h2>Click on this div to see what happens</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>1. Check for DOM Element</h2>
+          <p>The first step in the hardening process is to check if the DOM element exists before we attempt to assign an event listener to it. We do this by simply putting the addEventLisitener into an If statement.  document.getElementByID will return false if the element does not exist.  The element referenced below does not exist; console.log is used to send some debug information to the browser console.</p>
+          <pre><code class="js">
+if (document.getElementById("NotInPage")){
+  document.getElementById("NotInPage").addEventListener('click', cngColor, false);
+  console.log("Found the element NotInPage");
+}
+else {
+  console.log("Element NotInPage not found"); 
+}            
+          </code></pre>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>2. Internet Explorer</h2>
+          <p>The next problem is that older versions of Internet explorer did not implement 'addEventListener'; they implemented 'attachEvent'.  Using the same approach as above, we can setup a more robust checking mechanism  to allow us to check for the existance of the element, and setup a method to attach the events for older verions of IE and everything else.</p>
+          <pre><code class="js">
+if (document.getElementById("W3C")){
+  if (document.getElementById("W3C").addEventListener){
+    document.getElementById("W3C").addEventListener("click", cngColor, false);
+    document.getElementById("W3C").addEventListener("click", cngSize, false);
+    console.log("Added Event Listener");
+  }
+  else if (document.getElementById("W3C").attachEvent){
+    document.getElementById("W3C").attachEvent("onclick", chgColor);
+    document.getElementById("W3C").attachEvent("onclick", chgSize);
+    console.log("Attached Event - Old IE");
+  }
+}
+else {
+  console.log("Element W3C not found"); 
+}            
+          </code></pre>
+
+        </div>
+      </div>
+
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/JSP1.js"></script>
+  </body>
+</html>
