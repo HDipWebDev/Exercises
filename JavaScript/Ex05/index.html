@@ -1,0 +1,127 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>HTML5 Web Database</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="icon" href="favicon.ico"/>
+
+	</head>
+	
+	<body>
+
+		<div id='container'>
+			<div class='grd12'><h1>HTML5 Data Storage</h1></div>
+			<div class='clear'></div>			
+
+		
+			<nav>
+				<ul>
+					<li class='rmenu'><a href="#">Menu</a></li>
+					<li><a href="index.html">Local Storage</a></li>
+					<li><a href="WebSQL.html">Web DB</a></li>
+					<li><a href="IndexedDB.html">Indexed DB</a></li>
+				</ul>
+			</nav>
+			<div class='clear'></div>
+			<div class='grd12'>
+				<article>
+					<h1>Local Storage</h1>
+					<p>HTML5 introduced local storage as a potential replacement for cookies.  Cookies are limited in size to 4k.  Local storage allows for more storage capacity.  W3C guidelines indicate that local storage should be capped at 5Mb.</p>
+					<p>Storage/Retrieval is achieved by means of a key-value pair.  The value is limited to string values.  This is considered by many as a severe limitation of the system, in particular in relation to objects.  However objects can be stored usuing <span class='code'>JSON.stringify(object)</span>.</p>
+					
+				</article>
+			</div>
+			<div class='clear'></div>
+
+			<div class='grd12'>
+				<article>
+					<h2>localStorage Object</h2>
+					<p>The localStorge object has the following attributes</p>
+					<table>
+						<tr>
+							<td class='code'>localStorage.getItem(key)</td><td>Get the value associated with <span class='code'>key</span></td>
+						</tr>	
+						<tr>
+							<td class='code'>localStorage.setItem(key, value)</td><td>Create a new <span class='code'>key, value</span> pair</td>
+						</tr>
+						<tr>
+							<td class='code'>localStorage.removeItem(key)</td><td>Remove the item associated with <span class='code'>key</span></td>
+						</tr>
+					</table>
+				</article>
+			</div>
+			<div class='clear'></div>
+
+			<div class='grd12' id='testData'>
+			<p>The information below has been retrieved from the local storage.  You can view local storage in the 'Resources' tab of Chrome's Developer Tools</p>
+			</div>
+			<div class='clear'></div>
+
+			<div class='grd6' id='StrTestData'>
+			<h2>Retrieved Simple String</h2>
+			<p id='retString'></p>
+			</div>
+			<div class='grd6' id='ObjTestData'>
+			<h2>Retrieved Object</h2>
+			<p id='returnObj'></p>
+			</div>
+			<div class='clear'></div>
+
+
+
+			<div class='grd12' >
+			<h2>Form Based Example</h2>
+			<p>In this example the data placed into local storage will be taken from the data in-putted into the form.  Each 'key' in the internal storage must be unique.  Normally we would never allow users to specify a key at runtime; we would handle this within the code.  However in this example, the in-putted key value is tested against all other values and if it is unique the value is entered.  If not it is discarded and the user prompted for another 'key-value' pair</p>
+			</div>
+			<div class='clear'></div>
+
+
+			<div class='grd7'>
+
+				<!-- FORM METHODS
+				<form id='cookieForm' method='post'> Hides Data inside HTTP request
+				<form id='cookieForm' method='get'>  Data Visible on URL (avoid)
+				
+				In this example we will not be using either method as the data will be picked up and put into local storage using JavaScript
+				-->
+
+				<form id='localStorageForm'>
+  					<label for='key'>Key:</label>
+  						<input type='text' name='key' id='frmkey' placeholder='Local Storage Key'><br>
+  					 <label for='value'>Value:</label>
+  						<input type='text' name='value' id='frmvalue' placeholder='Local Storage Value'><br>
+  					<button type='button' form='localStorageForm' id='formButton'>Submit Information</button>	
+				</form>
+	
+			</div>
+			<div class='grd5'>
+				<table>
+						<tr>
+							<td>System Messages:</td><td id='message'></td>
+						</tr>
+						<tr>
+							<td>Entered Key</td><td id='ekey'></td>
+						</tr>	
+						<tr>
+							<td>Entered Value:</td><td id='evalue'></td>
+						</tr>
+				</table>
+			</div>
+
+			<div class='clear'></div>
+
+
+
+
+
+
+
+
+
+		</div> <!-- End of Container -->
+		<script type="text/javascript" src="js/LocalStorage.js"></script>
+	</body>
+</html>

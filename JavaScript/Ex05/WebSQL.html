@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>HTML5 Web SQL</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="icon" href="favicon.ico"/>
+	</head>
+	
+	<body>
+
+		<div id='container'>
+			<div class='grd12'><h1>HTML5 Data Storage</h1></div>
+			<div class='clear'></div>			
+
+		
+			<nav>
+				<ul>
+					<li class='rmenu'><a href="#">Menu</a></li>
+					<li><a href="index.html">Local Storage</a></li>
+					<li><a href="WebSQL.html">Web DB</a></li>
+					<li><a href="IndexedDB.html">Indexed DB</a></li>
+				</ul>
+			</nav>
+			<div class='clear'></div>
+			<div class='grd12'>
+				<article>
+				<h1>Web SQL</h1>
+				<p>WebSQL is a lightweight, but fully functionalm DBMS intended for the storage of small amounts of relational data.</p>
+				<p>In the time honored tradition of disagreement, some big names in Web disagreed on how to implement browser side storage. WebSQL supported by Google and apple, lost out to IndexedDB proposed by Mozilla and Microsoft.</p>
+				<p>It is included here to give you and idea of the possibilities.</p>
+
+
+				</article>
+			</div>
+			<div class='clear'></div>
+
+			<div class='grd12'>
+				<form id='cookieForm'>
+  					<label for='name'>Album:</label>
+  						<input type='text' name='album' id='albumIn'><br>
+  					<label for='text'>Artist:</label> 
+  						<input type='text' name='artist' id='artistIn'><br>
+  					<button type='button' form='cookieForm' id='goBtn'>Submit New Album</button>	
+				</form>
+			</div>
+			<div class='clear'></div>
+
+
+			<div class='grd12' id='albumList'>
+			THIS IS SOME TEST DATA
+			</div>
+			<div class='clear'></div>
+
+		</div> <!-- End of Container -->
+		<script type="text/javascript" src="js/WebSQL.js"></script>
+	</body>
+</html>

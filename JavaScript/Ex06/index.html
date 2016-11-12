@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript LightBox</title>
+		<link rel="stylesheet" type="text/css" href="style/style.css"/>
+
+	</head>
+	
+	<body>
+
+		<div id='container'>
+			<div class='grd12'><h1>JavaScript LightBox</h1></div>
+			<div class='clear'></div>			
+
+		
+			<nav>
+				<ul>
+					<li class='rmenu'><a href="#">Menu</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">Nothing Here</a></li>
+					<li><a href="#">Nothing Here</a></li>
+				</ul>
+			</nav>
+			<div class='clear'></div>
+			<div class='grd12'>
+				<article>
+					<p>There are two main pieces of functionality here.</p>
+					<p>The first involves highlighting the thumbnail image when the user mouses over.  This is achieved by mouseover and mouseout handlers.</p>
+					<p>The second piece of functionality changes the main image to display when the thumbnail is clicked, and highights the active thumbnail</p>
+					<p>Note that background images have been used to create the thumbnails, and each image is called one from the server.</p>
+				</article>
+			</div>
+			<div class='clear'></div>
+
+			<div class='bl2 grd8 br2'>
+				<img id='mainImage' src="img/signac.port-st-tropez.jpg">
+			</div>
+			<div class='clear'></div>
+
+			<div class="grd3"><div id='a1' class='normalThumb'></div></div>
+			<div class="grd3"><div id='a2' class='normalThumb'></div></div>
+			<div class="grd3"><div id='a3' class='normalThumb'></div></div>
+			<div class="grd3"><div id='a4' class='normalThumb'></div></div>
+			<div class="clear"></div>
+		</div> <!-- End of Container -->
+		<script type="text/javascript" src="js/JSLight.js"></script>
+	</body>
+</html>
