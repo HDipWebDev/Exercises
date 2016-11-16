@@ -70,13 +70,6 @@ function getCookie(c_name){
 	// to do this we need to use the substring method, which will return a string, dependent on the 
 	// values for start and end.   
 
-
-
-
-
-
-
-
 	console.log('getting cookie')
 
 		var c_value = document.cookie;

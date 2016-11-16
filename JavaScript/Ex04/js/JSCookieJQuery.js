@@ -5,10 +5,9 @@ $('document').ready(init);
 function init () {
 	console.log('Running Init');
 	reflectCode();
-	incrementVisitCount();	
+	showInitialVals();	
+	incrementVisitCount();
 	$('#subButton').click(formToCookie);
-	showInitialVals();
-
 }
 
 function setCookie (cookieKey, cookieValue, lifeSpan, path) {
@@ -87,7 +86,7 @@ function formToCookie () {
     	'p', 
     	'text-primary', 
     	'attachedCookieEmailID', 
-    	'Entered Email value is: ' + name + '.'
+    	'Entered Email value is: ' + email + '.'
     );
 
     if ($('#attachedCookieNameID').length > 0){
@@ -131,7 +130,7 @@ function showInitialVals () {
 	    var pName = createNewElement(
 	    	'p',
 	    	'text-primary',
-	    	'attachedCookeNameID',
+	    	'attachedCookieNameID',
 	    	'No Previous Name Cookie'
 	    );
 	    $('#cookieVals').append(pName);
@@ -141,7 +140,7 @@ function showInitialVals () {
 	    var pName = createNewElement(
 	    	'p',
 	    	'text-primary',
-	    	'attachedCookieEmailID',
+	    	'attachedCookieNameID',
 	    	'Cookie Name value is: ' + cookieName + '.'
 	    );
 	    $('#cookieVals').append(pName);
@@ -152,7 +151,7 @@ function showInitialVals () {
 	    var pEmail = createNewElement(
 	    	'p',
 	    	'text-primary',
-	    	'attachedCookeNameID',
+	    	'attachedCookieEmailID',
 	    	'No Previous Email Cookie'
 	    );
 	    $('#cookieVals').append(pEmail);
