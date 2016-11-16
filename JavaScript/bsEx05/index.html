@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Tutorial</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#">Local Storage</a></li>
+          <li><a href="BSExampleP2.html">Web DB</a></li>
+          <li><a href="BSExampleP3.html">Indexed DB</a></li>
+        </ul>
+      </nav>
+      <div class="row">
+        <div class="col-md-12">
+          <h1>HTML5 Data Storage</h1>
+          <p>HTML5 introduced local storage as a potential replacement for cookies. Cookies are limited in size to 4k. Local storage allows for more storage capacity. W3C guidelines indicate that local storage should be capped at 5Mb.
+Storage/Retrieval is achieved by means of a key-value pair. The value is limited to string values. This is considered by many as a severe limitation of the system, in particular in relation to objects. However objects can be stored using <code>JSON.stringify(object)</code>.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>localStorage Object</h2>
+          <p>The <code>localStorage</code> object has the following methods.</p>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Discription</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>localStorage.get(key)</code></td>
+                <td>Get the value associated with <code>key</code></td>
+              </tr>
+              <tr>
+                <td><code>localStorage.setItem(key, value)</code></td>
+                <td>Create a new <code>key, value</code> pair</td>
+              </tr>
+              <tr>
+                <td><code>localStorage.removeItem(key)</code></td>
+                <td>Remove the item associated with <code>key</code>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>The information below has been retrieved from the local storage. You can view local storage in the 'Application' tab of Chrome's Developer Tools</p>
+        </div>
+      </div>
+      <div class='row'>       
+        <div class='col-sm-12 col-md-12'>
+            <h2>JavaScript Code</h2>
+            <pre><code class='js' id='codeExample'>
+
+            </code></pre>
+          </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src='js/localstorage.js'></script>
+  </body>
+</html>
