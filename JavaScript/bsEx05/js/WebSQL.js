@@ -1,60 +1,98 @@
 // The titles on this database were compiled from Rolling Stone Magazine top 500 albums of all time.
 
-var db = openDatabase('HDip', '1', 'HDip WebSQL Music Database', 2 * 1024 * 1024);
+$('document').ready(initJS);
+
+function initJS(){
+
+  db = openDatabase('HDip', '1', 'HDip WebSQL Music Database', 2 * 1024 * 1024);
+
+  $('#goBtn').click(addItem);
+
+  if (db) {
+    db.transaction(function(tx) {
+      tx.executeSql("CREATE TABLE IF NOT EXISTS albums (id INTEGER AUTO_INCREMENT, album TEXT, artist TEXT)", []);
+    });
+  }
 
 
-if (db) {
-  db.transaction(function(tx) {
-    tx.executeSql("CREATE TABLE IF NOT EXISTS albums (id INTEGER AUTO_INCREMENT, album TEXT, artist TEXT)", []);
-  });
+  showAll();
+  reflectCode();
 }
 
-addEvent(document.getElementById('goBtn'), 'click', addItem)
-
-showAll();
 
 function addItem() {
 
-  var albumIn = document.getElementById('albumIn').value
-  var artistIn = document.getElementById('artistIn').value
+  var albumIn = $('input[name=album]').val();
+  var artistIn = $('input[name=artist]').val();
 
   console.log(albumIn, artistIn)
 
-  db.transaction(function(tx) {
-    tx.executeSql('INSERT INTO albums (album, artist) values (?, ?)', [albumIn, artistIn]);
-  });
+  //debugger;  // this command will stop exection so you can check your values.
+
+  db.transaction(
+    function(tx) {
+      tx.executeSql(
+        'INSERT INTO albums (album, artist) values (?, ?)', 
+        [albumIn, artistIn]),
+  
+        function (tx, result) {
+          console.log("Insert Success");
+        },
+        function (tx, error) {
+          console.log("Query Error: " + error.message);
+        }
+    },
+
+    function (error) {
+        console.log("Transaction Error: " + error.message);
+    },
+    function () {
+        console.log("Transaction Success");
+    }
+  );
+
+  //debugger;
 
   albumIn, artistIn = ''; // Clean for the next run.
-  showAll();
+  //showAll();
 }
 
 
 
 
 function showAll() {
-  var albumList = document.getElementById('albumList');
-  albumList.innerHTML = '';
+  var albumList = $('#albumList');
 
   db.transaction(function(tx) {
     tx.executeSql('SELECT * FROM albums', [], function (tx, results) {
       var len = results.rows.length;
 
       if (len <= 0 ){loadDB()}
+      // need to create <tbody><tr><td><td><td>
 
-
-      var ul = document.createElement("ul");
+      var tbody = document.createElement("tbody");
       for (var i = 0; i < len; i++) {
         var item = results.rows.item(i);
+        var tr = document.createElement('tr');
+        var rankdata = document.createElement('td');
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var rank = document.createTextNode(i+1); // plus 1 because of zero index
+        var t1 = document.createTextNode(item.album);
+        var t2 = document.createTextNode(item.artist);
 
-        var li = document.createElement("li");
-        var t = document.createTextNode(i + ") Album: " + item.album +
-                                        " => Artist: " + item.artist);
-        li.appendChild(t);
-        ul.appendChild(li);
+        rankdata.appendChild(rank);
+        td1.appendChild(t1);
+        td2.appendChild(t2);
+        tr.appendChild(rank);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tbody.appendChild(tr);
+        //console.log(tbody);  // switch on if you want to have a look..
       }
 
       // Update the DOM only after we have ALL items in one element...
-      albumList.appendChild(ul);
+      albumList.append(tbody);
     }); // end of function
   }); // end of db.transaction
 }  // end of function
@@ -69,25 +107,6 @@ function deleteItem(id, text) {
     showAll();
   }
 }
-
-
-
-function addEvent (obj, listener, handler) {
-  if (obj){
-    if (obj.addEventListener){
-      obj.addEventListener(listener, handler, false);
-      console.log("Added Event Listener to " + obj );
-    }
-    else if (obj.attachEvent){
-      obj.attachEvent("on" + listener, handler);
-      console.log("Attached Event - Old IE");
-    }
-  }
-  else {
-    console.error("Element " + obj + " not found"); 
-  }
-}
-
 
 
 function loadDB() {
@@ -202,5 +221,8 @@ function loadDB() {
 
 }
 
-
-
+function reflectCode(){
+  $.get('js/WebSQL.js', function(data) {
+     $('#codeExample').text(data);
+  }, 'text');
+}

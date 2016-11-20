@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Tutorial</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <ul class="nav nav-tabs">
+          <li><a href="index.html">Local Storage</a></li>
+          <li class="active"><a href="WebSQL.html">Web DB</a></li>
+          <li><a href="BSExampleP3.html">Indexed DB</a></li>
+        </ul>
+      </nav>
+      <div class="row">
+        <div class="col-md-12">
+          <h1>HTML5 Data Storage</h1>
+          <p>WebSQL is a lightweight, but fully functionalm DBMS intended for the storage of small amounts of relational data.
+In the time honored tradition of disagreement, some big names in Web disagreed on how to implement browser side storage. WebSQL supported by Google and Apple, lost out to IndexedDB proposed by Mozilla and Microsoft.
+It is included here to give you and idea of the possibilities.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>WebSQL</h2>
+          <p>You can enter some data in the form below; your data will be appended to the end of the album listing.</p>
+          <form class='col-md-offset-3 col-md-6'>
+            <div class="form-group">
+              <label for="album">Album:</label>
+              <input name='album' type="text" class="form-control" id="albumIn">
+            </div>
+            <div class="form-group">
+              <label for="artist">Artist:</label>
+              <input name='artist' type="text" class="form-control" id="artistIn">
+            </div>
+            <button type="submit" class="btn btn-primary" id='goBtn'>Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Database dump</h2>
+          <p>The information below has been retrieved from the database. You can view local database in the 'Application' tab of Chrome's Developer Tools</p>
+          <table class='table table-striped' id='albumList'>
+            <thead>
+              <tr>
+                <th>Ranking</th>
+                <th>Album</th>
+                <th>Artist</th>
+              </tr>
+            </thead>
+            
+          </table>
+
+
+        </div>
+      </div>
+      <div class='row'>       
+        <div class='col-sm-12 col-md-12'>
+            <h2>JavaScript Code</h2>
+            <pre><code class='js' id='codeExample'>
+
+            </code></pre>
+          </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src='js/websql.js'></script>
+  </body>
+</html>

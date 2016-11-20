@@ -8,8 +8,8 @@ function initJS () {
 
 function formInfo () {
 
-	inKey = document.getElementById('frmkey').value;
-	inVal = document.getElementById('frmvalue').value;
+	inKey = $('#frmkey').val;
+	inVal = $('#frmvalue').val;
 
 	console.log(inKey, inVal);
 
