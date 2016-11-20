@@ -25,8 +25,6 @@ function addItem() {
   var albumIn = $('input[name=album]').val();
   var artistIn = $('input[name=artist]').val();
 
-  console.log(albumIn, artistIn)
-
   //debugger;  // this command will stop exection so you can check your values.
 
   db.transaction(
@@ -52,9 +50,6 @@ function addItem() {
   );
 
   //debugger;
-
-  albumIn, artistIn = ''; // Clean for the next run.
-  //showAll();
 }
 
 
