@@ -12,21 +12,27 @@
       <nav class="navbar navbar-default">
         <ul class="nav nav-tabs">
           <li><a href="index.html">Local Storage</a></li>
-          <li class="active"><a href="#">Web DB</a></li>
-          <li><a href="IndexedDB.html">Indexed DB</a></li>
+          <li><a href="WebSQL.html">Web DB</a></li>
+          <li class="active"><a href="#">Indexed DB</a></li>
         </ul>
       </nav>
       <div class="row">
         <div class="col-md-12">
           <h1>HTML5 Data Storage</h1>
-          <p>WebSQL is a lightweight, but fully functionalm DBMS intended for the storage of small amounts of relational data.
-In the time honored tradition of disagreement, some big names in Web disagreed on how to implement browser side storage. WebSQL supported by Google and Apple, lost out to IndexedDB proposed by Mozilla and Microsoft.
-It is included here to give you and idea of the possibilities.</p>
+          <p>IndexedDB is lightweight no-SQL DBMS built into most common browsers.  IndexedDB is the recommended W3C local database for browsers.  Like WebSQL, it is a transactional database.</p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <h2>WebSQL</h2>
+          <h2>IndexedDB Concepts</h2>
+          <p>A <code>KeyPath</code> is a ....  A <code>Key Generator</code> is something else</p>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2>IndexedDB</h2>
           <p>You can enter some data in the form below; your data will be appended to the end of the album listing.</p>
           <form class='col-md-offset-3 col-md-6'>
             <div class="form-group">
@@ -71,6 +77,6 @@ It is included here to give you and idea of the possibilities.</p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src='js/websql.js'></script>
+    <script src='js/IndexedDB.js'></script>
   </body>
 </html>
