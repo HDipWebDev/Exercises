@@ -43,6 +43,8 @@ function init () {
 	addEvent(document.getElementById('a3'), 'mouseout', hideBorder);
 	addEvent(document.getElementById('a4'), 'mouseout', hideBorder);
 
+	reflectCode();
+
 }
 
 function showAsLarge () {
@@ -140,16 +142,8 @@ function getLengthURL () {
 	return siteURL.length
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+function reflectCode(){
+	$.get('js/JSLight.js', function(data) {
+	   $('#codeExample').text(data);
+	}, 'text');
+}

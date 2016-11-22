@@ -1,15 +1,36 @@
 // localStorage.js
 
+window.onload = initJS;
+
 function initJS () {
 
 	$('#formButton').click(formInfo);
+
+
+	exObject.setName('This is my example object to store in localStorage');
+	exObject.setNumber(14);
+
+	console.log(exObject.getName());
+	console.log(exObject.getNumber());
+
+	localStorage.setItem('myObject', JSON.stringify(exObject));
+
+	console.log(localStorage.getItem('myObject'));
+
+	var retObj = JSON.parse(localStorage.getItem('myObject'));
+	console.log(retObj);
+
+	showRetObj(retObj);
+
+	simpleSetRetrieve();
+	reflectCode();
 }
 
 
 function formInfo () {
 
-	inKey = $('#frmkey').val;
-	inVal = $('#frmvalue').val;
+	inKey = $('#frmkey').val();
+	inVal = $('#frmvalue').val();
 
 	console.log(inKey, inVal);
 
@@ -17,12 +38,12 @@ function formInfo () {
 
 		localStorage.setItem(inKey, inVal);
 
-		$('#message').innerHTML = "Data Entered:"
-		$('#ekey').innerHTML = inKey;
-		$('#evalue').innerHTML = localStorage.getItem(inKey);
+		$('#message').html('Data Entered');
+		$('#ekey').html(inKey);
+		$('#evalue').html(localStorage.getItem(inKey));
 
 	} else{
-		$('#message').innerHTML = "Key Error: no data entered"
+		$('#message').html('Key Error: no data entered');
 	}
 
 
@@ -32,11 +53,7 @@ function simpleSetRetrieve () {
 
 	localStorage.setItem('simpleName','This is some simple data');
 
-	var output = "<h3>"
-	output += localStorage.getItem('simpleName');
-	output += "</h3>"
-
-	$('#StrTestData').innerHTML = output;
+	$('#lsData').attr('placeholder', localStorage.getItem('simpleName'));
 
 }
 
@@ -66,37 +83,10 @@ function showRetObj (obj) {
 
 	console.log(obj);
 
-	var output ='<h3>';
-	output += 'The object name is: ' + obj.name;
-	output += '</h3><br><h3>  ';
-	output += 'The object number is: ' + obj.number;
-	output += '</h3>';
-	console.log(output);
+	$('#objName').attr('placeholder', obj.name);
+	$('#objNumber').attr('placeholder', obj.number);
 
-	$('#ObjTestData').innerHTML = output;
 }
-
-
-
-window.onload = initJS;
-
-exObject.setName('This is my example object to store in localStorage');
-exObject.setNumber(14);
-
-console.log(exObject.getName());
-console.log(exObject.getNumber());
-
-localStorage.setItem('myObject', JSON.stringify(exObject));
-
-console.log(localStorage.getItem('myObject'));
-
-var retObj = JSON.parse(localStorage.getItem('myObject'));
-console.log(retObj);
-
-showRetObj(retObj);
-
-simpleSetRetrieve();
-reflectCode();
 
 
 // The function below is to reflect the contents of the javascript file back to the HTML Page

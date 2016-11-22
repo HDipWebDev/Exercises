@@ -53,7 +53,57 @@ Storage/Retrieval is achieved by means of a key-value pair. The value is limited
       </div>
       <div class="row">
         <div class="col-md-12">
+          <h2>Simple Example</h2>
           <p>The information below has been retrieved from the local storage. You can view local storage in the 'Application' tab of Chrome's Developer Tools</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Data returned from Local Storage</h3>
+          <input type="text" name='lsData' class="form-control" id='lsData' placeholder='Local Storage Value' disabled>
+        </div>
+        <div class="col-md-6">
+          <h3>Parsed Object from Local Storage</h3>
+          <input type="text" name='objName' class="form-control" id='objName' placeholder='Object Name' disabled>
+          <input type="text" name='objNumber' class="form-control" id='objNumber' placeholder='Object Number' disabled>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Form Based Example</h2>
+          <p>In this example the data placed into local storage will be taken from the data in-putted into the form. Each 'key' in the internal storage must be unique. Normally we would never allow users to specify a key at runtime; we would handle this within the code. However in this example, the entered key value is tested against all other values and if it is unique the value is entered. If not it is discarded and the user prompted for another 'key-value' pair</p>
+        </div>
+
+
+      </div>
+      <div class="row">  
+        <form class="col-md-6" id='localStorageForm'>
+          <div class="form-group">
+            <label for='key'>Key:</label>
+            <input type='text' name='key' class="form-control" id='frmkey' placeholder='Local Storage Key'>
+          </div>
+          <div class="form-group">
+            <label for='value'>Value:</label>
+            <input type='text' name='value' class="form-control" id='frmvalue' placeholder='Local Storage Value'>
+          </div>
+          <button type='button' form='localStorageForm' class="btn btn-primary" id='formButton'>Submit Information</button> 
+        </form>
+        <div class="col-md-6">
+          <table class = "table table-bordered">
+            <tr>
+              <td>System Messages:</td>
+              <td id="message"></td>
+            </tr>
+            <tr>
+              <td>Entered Key:</td>
+              <td id="ekey"></td>
+            </tr>
+            <tr>
+              <td>Entered Value:</td>
+              <td id="evalue"></td>
+            </tr>
+          </table>
         </div>
       </div>
       <div class='row'>       
