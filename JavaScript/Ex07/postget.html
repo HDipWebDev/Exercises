@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>HTML5 Forms</title>
+
+    <!-- Bootstrap -->
+    <link href="../bs/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+   <div class="container">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-default">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">HTML5 Forms</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lists.html">Dropdowns</a></li>
+            <li class="active"><a href="#">Post/Get</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container" role="main">
+      <div class="row">
+        <div class="col-md-12">
+          <p>We have been dealing with JavaScript, so there was very little that we had to do in order to access the information inputted by the user.</p>
+          <p>The reality for many (if not most) web applications is that the information the user inputs will be used by a controlling script of some kind, typically php. The controlling script is likely to enter that information into a database, or use the information in some other way</p>
+          <p>The question then becomes 'How do I send data to the server'. In essence the server takes requests, executes them, then serves up the data. So what we do is simply 'attach' our form data to the request. We have two ways to do this. The 'post' method and the 'get' method.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+           <h2>POST Method (little bit secure)</h2>
+           <p>POST under HTTP is by no means secure. It simply attaches your form data to the HTTP request headers. This means that your data is transmitted over HTTP in plain text, and is open to anyone who cares to have a look. HTTPS is widly accepted as a secure. It should be noted however that the entire site must be handled through HTTPS, not just the sensitive areas.</p>
+           <p>Production sites generally use the POST method as it is a little more secure. GET is useful for debugging.</p>
+           <form id='POSTForm' method='post'action='postTest.php' autocomplete='on'>
+            <div class="form-group">
+              <label for='username'>Name:</label>
+              <input type='text' name='username' class='form-control' id='username' placeholder='Firstname Surname'>          
+            </div>
+            <div class="form-group">
+              <label for='pword'>Password:</label>
+              <input type='password' name='pword' class='form-control' id='pword' placeholder='Password'>
+            </div>
+          </form>           
+          <button type='submit' class='btn btn-primary' form="POSTForm">Submit</button>
+        </div>
+        <div class="col-md-6">
+           <h2>GET Method (not secure)</h2>
+           <p>The GET method puts the form data directly onto the URL of the request. This approach allows for bookmarking and other functionality, however it lacks security. It should not be used for sensitive data, such as username, password, bank details. etc.</p>
+           <p>The image on the lower part of the page is from 'onlinedvdrentals.co.uk'. As of 26-11-2013, the irish version of the site was not responding. If you examine the image you will see that the search bar sent data via a GET on the URL. More information down </p>
+           <p>The GET request is one of the first points of attack by a hacker attempting SQL injection. <a href="http://www.youtube.com/watch?v=td4HUPDAlFI">http://www.youtube.com/watch?v=td4HUPDAlFI</a></p>
+           <form id='GETForm' method='get'action='getTest.php' autocomplete='on'>
+            <div class="form-group">
+              <label for='getuname'>Name:</label>
+              <input type='text' name='getuname' class='form-control' id='getuname' placeholder='Firstname Surname'>              
+            </div>
+            <div class="form-group">
+              <label for='getpword'>Password:</label>
+              <input type='password' name='getpword' class='form-control' id='getpword' placeholder='Password'>             
+            </div>           
+           </form>
+            <button type='submit' class='btn btn-primary' form="GETForm">Submit</button>           
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Why do we care?</h2>
+        </div>
+        <div class="col-md-6">
+          <img src="img/forbidden.jpg" class='img-responsive img-rounded' alt="Web7 Limerick">
+        </div>
+        <div class="col-md-6">
+          <p>
+            Using GET, of itself is not such a big deal. The problem in this instance is that the web authors appear to be using an MVC model for the site. OK, that is good. But when you use the search bar it puts the search data onto the URL for all to see. This means that somewhere something did not get controlled. If you mess with the site a bit, it will also throw a 400 page that tells everyone exactly what the site is running on. 
+          </p>
+          <p>We can now see that the site, DoneDeal, is running Apache Tomcat.  This means java as the codebase and possibly an Oracle back end database.</p>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bs/js/bootstrap.min.js"></script>
+  </body>
+</html

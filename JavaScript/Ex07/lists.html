@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>HTML5 Forms</title>
+
+    <!-- Bootstrap -->
+    <link href="../bs/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+   <div class="container">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-default">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">HTML5 Forms</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="#">Dropdowns</a></li>
+            <li><a href="postget.html">Post/Get</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+    </nav>
+      <div class="row">
+        <div class="col-md-12">        
+          <p>Dropdown lists can be implemented HTML5. These are handled by the <code>&lt;select&gt;</code> tag in conjunction with a number of nested <code>&lt;option&gt;</code> tags. The <code>&lt;option&gt;</code> tag is also used for the <code>&lt;datalist&gt;</code> shown to the right. Note that the syntax is different in the <code>&lt;datalist&gt;</code> context.</p>
+          <p>HTML5 introduced the concept of a <code>&lt;datalist&gt;</code>. A datalist is bound to a specific input in the HTML. Each data item is held within an <code>&lt;option&gt;</code> tag. In this case however the syntax is <code>&lt;option value='someValue'&gt;</code>.</p>
+          <p>When the user enters data into the bound input field, the entered data is checked and highlighted for the user. This functionality is designed to make form filling a little bit easier, but unlike the dropdown implementation, allows for the user to enter a value that has not been previously defined.</p>
+          <p>It is also worth noting that with autocomplete 'on', your browser will prompt for previously entered values that are not in the datalist. With autocomplete 'off', this does not happen.</p>
+        </div>
+      </div>  
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="dlist">Make a Selection:</label>
+            <select class="form-control" id="dlist">
+              <option>Computer security‎</option>
+              <option>Programming language theory‎</option>
+              <option>Concurrency</option>
+              <option>Artificial intelligence‎</option>
+              <option>Mathematical optimization‎</option>
+              <option>Database theory‎</option>
+              <option>Computer graphics‎</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <form id='optionForm' autocomplete='on'>
+            <label for='county'>Select County</label>
+            <input type='text' class="form-control" name='county' id='county' list='countyData'placeholder='Enter a county'>
+            <datalist id='countyData'>
+            <option value='Antrìm'>
+            <option value='Armagh'>
+            <option value='Carlow'>
+            <option value='Cavan'>
+            <option value='Clare'>
+            <option value='Cork'>
+            <option value='Kerry'>
+            <option value='Kildare'>
+            <option value='Kilkenny'>
+            <option value='Laois'>
+            <option value='Leitrim'>
+            <option value='Limerick'>
+            <option value='Longford'>
+            <option value='Louth'>
+            <option value='Mayo'>
+            <option value='Meath'>
+            <option value='Monaghan'>
+            <option value='Tipperary'>
+            <option value='Tyrone'> 
+            <option value='Waterford'>
+            <option value='Westmeath'>
+            <option value='Wexford'>  
+            <option value='Wicklow'>  
+            </datalist>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class='col-md-12'>        
+        <h2>Radio and Check</h2>
+          <p>Radio and Checks are also easy to implement in HTML. Note that some of the examples of layout on the net (inc W3C) do not use a bound label. Such practice is to be avoided.</p>
+          <p>For the most part, implementing both is the same; however the <code>name</code> value for the radio button group must be the same in order for grouping to work. This is not necessary for checkboxes.</p>
+        </div> 
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Checkbox</h2>
+          <div class="checkbox">
+            <label><input type="checkbox" value="TCP">Transmission Control Protocol</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="HTTP">Hypertext Transfer Protocol</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="FTP" >File Transfer Protocol</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="IMAP">Internet Message Access Protocol</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h2>Radio Buttons</h2>
+          <div class="radio">
+            <label><input type="radio" name="direction">North</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="direction">South</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="direction">East</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="direction">West</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bs/js/bootstrap.min.js"></script>
+  </body>
+</html
