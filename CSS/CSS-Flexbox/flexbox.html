@@ -12,7 +12,7 @@
 
 		<div id='container'>
 			<div class='row'>
-				<div class='col-12'>
+				<div class='flex-12'>
 					<h1>Introduction to Flexbox</h1>
 					<p>A different approach to layout is used for flexbox.  In this instance we do not specify a container width; we set the width to 'auto' and let flexbox change the column widths as necessary</p>
 					<p>Media queries are still necessary.  We use these to control how the divs are ordered on the page.  I have used the media queries to change the left and right margins, and to stack the divs upto a max-width of 481px</p>
@@ -21,11 +21,11 @@
 
 
 			<div class='row'>
-				<div class='col-1'>
+				<div class='flex-1'>
 					<h1>First</h1>
 					<p>Each row does not have to up to 12.  This row consists of a 1 and a 2.</p>
 				</div>
-				<div class='col-2'>
+				<div class='flex-2'>
 					<h1>Second</h1>
 					<p>This div has been given a flex value of 2, and is therefore twice as large as the div to the left.</p>
 				</div>
@@ -33,14 +33,14 @@
 
 
 			<div class='row'>
-				<div class='col-4'><h1>First</h1>
+				<div class='flex-4'><h1>First</h1>
 					<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sed a excepturi error perferendis natus velit, modi labore laudantium sequi corporis harum eligendi alias, reiciendis possimus. Adipisci quas distinctio repellat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, nemo! Rerum dicta eaque laudantium obcaecati totam eveniet, laboriosam architecto ab ut porro excepturi. Recusandae quasi consequuntur consectetur, perferendis praesentium distinctio?</p>				</div>
-				<div class='col-4'><h1>Second</h1>
+				<div class='flex-4'><h1>Second</h1>
 					<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sed a excepturi error perferendis natus velit, modi labore laudantium sequi corporis harum eligendi alias, reiciendis possimus. Adipisci quas distinctio repellat. </p>
 				</div>
-				<div class='col-4'><h1>Third</h1>
+				<div class='flex-4'><h1>Third</h1>
 					<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus. </p>
 				</div>
@@ -48,37 +48,45 @@
 			
 
 			<div class='row'>
-				<div class='col-12'><h1>Flexbox 'order' Attribute</h1>
+				<div class='flex-12'><h1>Flexbox 'order' Attribute</h1>
 				<p>Flexbox allows you to take control of the ordering of elements using the 'order' attribute.  The divisions below have been re-ordered via flexbox css from the ordering in the HTML file.</p>
 				</div>
 			</div>
 
 			<div class='row'>
-				<div class='col-3 order-4'><h1>First in HTML</h1></div>
-				<div class='col-3 order-2'><h1>Second in HTML</h1></div>
-				<div class='col-3 order-3'><h1>Third in HTML</h1></div>
-				<div class='col-3 order-1'><h1>Fourth in HTML</h1></div>
+				<div class='flex-3 order-4'><h1>First in HTML</h1></div>
+				<div class='flex-3 order-2'><h1>Second in HTML</h1></div>
+				<div class='flex-3 order-3'><h1>Third in HTML</h1></div>
+				<div class='flex-3 order-1'><h1>Fourth in HTML</h1></div>
 			</div>
 
 			<div class='row'>
-				<div class='col-6'><h1>First</h1></div>
-				<div class='col-3'><h1>Second</h1></div>
-				<div class='col-3'><h1>Third</h1></div>
-			</div>
-			
-			<div class='row'>
-				<div class='col-3'><h1>First</h1></div>
-				<div class='col-6'><h1>Second</h1>
-					<div class='trim-left col-3'><h1>First</h1></div>
-					<div class='col-3 trim-right'><h1>First</h1></div>
+				<div class='flex-6'>
+					<h1>No Need for Blanks</h1>
+					<p>CSS code for blank space is not necessary in Flexbox.  In normal CSS, padding is used to insert blank grid space between elements.  In flexbox this is not necessary, as the div will be rendered out to the specified size even if no content is provided.</p>
 				</div>
-				<div class='col-3'><h1>Third</h1></div>
+				<div class='flex-3'></div>
+				<div class='flex-3'>
+					<h1>Third</h1>
+					<p>An empty div has been rendered to the correct size to the left of this div</p>
+				</div>
 			</div>
 			
 			<div class='row'>
-				<div class='col-3'><h1>First</h1></div>
-				<div class='col-3'><h1>Second</h1></div>
-				<div class='col-6'>
+				<div class='flex-1'><h1>Quarter Width</h1></div>
+				<div class='flex-2'><h1>Half Width</h1>
+					<div class='row'>
+						<div class='flex-1'><h2>Child 1</h2></div>
+						<div class='flex-1'><h2>Child 2</h2></div>
+					</div>
+				</div>
+				<div class='flex-1'><h1>Quarter Width</h1></div>
+			</div>
+			
+			<div class='row'>
+				<div class='flex-3'><h1>First</h1></div>
+				<div class='flex-3'><h1>Second</h1></div>
+				<div class='flex-6'>
 					<h1>Third</h1>
 					<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas est perspiciatis maiores porro, reiciendis consectetur cum et quidem quae dolorem quos sunt architecto, culpa similique nisi iusto! Deserunt, at, nihil!
@@ -87,15 +95,24 @@
 			</div>
 			
 			<div class='row'>
-				<div class='col-12'><h1>Big 12 Parent</h1>
-				<div class='trim-left col-3'><h1>3 Child</h1></div>
-				<div class='col-6'>
-					<h1>6 Child</h1> 
-					<p>
+				<div class='flex-12'><h1>Big 12 Parent</h1>
+				
+				<div class='row'>
+					<div class='flex-3'><h2>3 Child</h2></div>
+					<div class='flex-6'>
+						<h2>6 Child</h2> 
+						<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem recusandae voluptatibus aliquid repellat, dignissimos beatae explicabo. Aliquid error minus qui provident ipsa expedita, rem, corrupti commodi, eveniet adipisci autem itaque.
-					</p> 
+						</p> 
+					</div>
+					<div class='flex-3'>
+						<h2>3 Child</h2>
+						<p>
+							No need to trim left and right for child divs.  However you still have extra margin from the child divs, so allignment may require removing them anyway.
+						</p>
+					</div>
 				</div>
-				<div class='col-3 trim-right'><h1>3 Child</h1></div>
+
 				</div>
 			</div>
 		</div>

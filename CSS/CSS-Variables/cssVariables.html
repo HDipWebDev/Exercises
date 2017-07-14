@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>CSS Variables</title>
+		<link rel="stylesheet" type="text/css" href="./cssVariables.css"/>
+	</head>
+	
+	<body>
+
+		<div id='container'>
+			<div class='row'>
+				<div class='flex-1'>
+					<h1>CSS Variables</h1>
+					<p>CSS4 introduced variables to stylesheets.  In usage they are quite simple and easy to implement.  Variables can be declared globally or localaly, and accessed using var() when needed.</p>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='flex-1 order-4 color4'><h1>First in HTML</h1></div>
+				<div class='flex-1 order-2 color3'><h1>Second in HTML</h1></div>
+				<div class='flex-1 order-3 color2'><h1>Third in HTML</h1></div>
+				<div class='flex-1 order-1 color1'><h1>Fourth in HTML</h1></div>
+			</div>
+
+			<div class='row'>
+				<div class='flex-6'>
+					<h1>No Need for Blanks</h1>
+					<p>CSS code for blank space is not necessary in Flexbox.  In normal CSS, padding is used to insert blank grid space between elements.  In flexbox this is not necessary, as the div will be rendered out to the specified size even if no content is provided.</p>
+				</div>
+				<div class='flex-3'></div>
+				<div class='flex-3'>
+					<h1>Third</h1>
+					<p>An empty div has been rendered to the correct size to the left of this div</p>
+				</div>
+			</div>
+			
+			<div class='row'>
+				<div class='flex-1'><h1>Quarter Width</h1></div>
+				<div class='flex-2'><h1>Half Width</h1>
+					<div class='row'>
+						<div class='flex-1'><h2>Child 1</h2></div>
+						<div class='flex-1'><h2>Child 2</h2></div>
+					</div>
+				</div>
+				<div class='flex-1'><h1>Quarter Width</h1></div>
+			</div>
+			
+			<div class='row'>
+				<div class='flex-3'><h1>First</h1></div>
+				<div class='flex-3'><h1>Second</h1></div>
+				<div class='flex-6'>
+					<h1>Third</h1>
+					<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas est perspiciatis maiores porro, reiciendis consectetur cum et quidem quae dolorem quos sunt architecto, culpa similique nisi iusto! Deserunt, at, nihil!
+					</p>
+				</div>
+			</div>
+			
+			<div class='row'>
+				<div class='flex-12'><h1>Big 12 Parent</h1>
+				
+				<div class='row'>
+					<div class='flex-3'><h2>3 Child</h2></div>
+					<div class='flex-6'>
+						<h2>6 Child</h2> 
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem recusandae voluptatibus aliquid repellat, dignissimos beatae explicabo. Aliquid error minus qui provident ipsa expedita, rem, corrupti commodi, eveniet adipisci autem itaque.
+						</p> 
+					</div>
+					<div class='flex-3'>
+						<h2>3 Child</h2>
+						<p>
+							No need to trim left and right for child divs.  However you still have extra margin from the child divs, so allignment may require removing them anyway.
+						</p>
+					</div>
+				</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
