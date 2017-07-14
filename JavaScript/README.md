@@ -1,27 +1,27 @@
-##JavaScript Exercises
+## JavaScript Exercises
 
-###EX01
+### EX01
 Introduction to Event Handlers
 
 
-###EX02
+### EX02
 Better Event Handlers and JQuery Handlers
 
 
-###EX03
+### EX03
 Getting Browser Information
 
 
-###EX04
+### EX04
 JavaScript Cookies
 
 
-###EX05
+###  EX05
 HTML5 Data Storage, Local Storage, WebDB and IndexedDB
 
 
-###EX06
+### EX06
 JavaScript LightBox
 
-###EX07
+### EX07
 Lots of Forms Examples
