@@ -1,0 +1,105 @@
+/*
+ ____                _
+|  _ \ ___  ___  ___| |_
+| |_) / _ \/ __|/ _ \ __|
+|  _ <  __/\__ \  __/ |_
+|_| \_\___||___/\___|\__|
+
+*/
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+
+/*
+ _____                                        _
+|_   _|   _ _ __   ___   __ _ _ __ __ _ _ __ | |__  _   _
+  | || | | | '_ \ / _ \ / _` | '__/ _` | '_ \| '_ \| | | |
+  | || |_| | |_) | (_) | (_| | | | (_| | |_) | | | | |_| |
+  |_| \__, | .__/ \___/ \__, |_|  \__,_| .__/|_| |_|\__, |
+      |___/|_|          |___/          |_|          |___/
+*/
+
+body {
+	background-color: gray;
+	color: #FFFFFF;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+
+
+/*
+ ____            _        _                            _
+| __ )  __ _ ___(_) ___  | |    __ _ _   _  ___  _   _| |_
+|  _ \ / _` / __| |/ __| | |   / _` | | | |/ _ \| | | | __|
+| |_) | (_| \__ \ | (__  | |__| (_| | |_| | (_) | |_| | |_
+|____/ \__,_|___/_|\___| |_____\__,_|\__, |\___/ \__,_|\__|
+                                     |___/
+*/
+
+#container {
+	display: block;
+	background-color: #172CAF;
+	width: auto;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.cols{
+	display: grid;
+	grid-auto-rows: minmax(100px, auto);
+	background-color: #0C5DA5;
+	
+}
+
+
+.one-col{
+	grid-template-columns: 100%;
+	background-color: green;
+}
+
+.two-cols{
+	grid-template-columns: 1fr 1fr;
+	background-color: red;
+}
+
+.three-cols {
+	grid-template-columns: repeat(3, 1fr);
+	background-color: orange;
+}
+
+.four-cols {
+	grid-template-columns: 25% 25% 25% 25%;
+}
+
+
+/*
+ __  __          _ _          ___                  _
+|  \/  | ___  __| (_) __ _   / _ \ _   _  ___ _ __(_) ___  ___
+| |\/| |/ _ \/ _` | |/ _` | | | | | | | |/ _ \ '__| |/ _ \/ __|
+| |  | |  __/ (_| | | (_| | | |_| | |_| |  __/ |  | |  __/\__ \
+|_|  |_|\___|\__,_|_|\__,_|  \__\_\\__,_|\___|_|  |_|\___||___/
+
+*/
+
+
+@media screen and (max-width: 481px){
+	#container {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.one-col,
+	.two-cols,
+	.three-cols, 
+	.four-cols{
+		grid-template-columns: 100%;
+		background-color: green;
+	}
+}
