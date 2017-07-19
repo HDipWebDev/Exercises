@@ -4,7 +4,7 @@
 
 	<head>
 		<meta charset="utf-8"/>
-		<title>A Better Grid</title>
+		<title>CSS Display : Grid</title>
 		<link rel="stylesheet" type="text/css" href="./grid.css"/>
 	</head>
 	
@@ -13,14 +13,16 @@
 		<div id='container'>
 			<div class='cols one-col'>
 				<div>
-					<h1>This is a full width div</h1>
+					<h1>CSS Display: Grid</h1>
+					<p>CSS has a built in grid system that can be used by setting the display attribute to grid.  It works well when the grid pattern is regular, for instance 4 rows of 3 columns each.  Implementation is more difficult in instances where each row has a different number of columns.</p>
+					<p>The CSS Grid system does allow for nested grids, i.e. grids within grids.  This aids the flexibility of the system.</p>
 				</div>
 			</div>	
 			
 
 			<div class='cols two-cols'>
-				<div><h1>First</h1></div>
-				<div><h1>Second</h1></div>
+				<div><h1>Left Cell</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat quisquam, reprehenderit eius! Saepe cupiditate debitis adipisci laudantium alias nihil molestiae error vero enim voluptatibus numquam doloremque consequuntur repudiandae, suscipit est?</p></div>
+				<div><h1>Right Cell</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam deleniti ratione, earum dolores nemo, voluptates adipisci consectetur ea atque rerum harum iste magni, cupiditate veritatis repellendus velit porro odio ipsam.</p></div>
 			</div>
 			
 
@@ -34,7 +36,7 @@
 			</div>
 
 			<div class='cols three-cols'>
-				<div><h1>First</h1></div>
+				<div><h1>First</h1><p>Note that none of these divs have classes applied.  A single parent div defines the grid system.</p></div>
 				<div><h1>Second</h1></div>
 				<div><h1>Third</h1></div>
 				<div><h1>Fourth</h1></div>
